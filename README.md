@@ -2,6 +2,19 @@
 
 This project is a compact experimental Node.js/MongoDB application designed to demonstrate Docker networking and cross-container communication. The core objective is to show how two isolated containers can exchange data reliably when attached to the same user-defined Docker network.
 
+<div align="center">
+  
+| 1 |
+| :---: |
+| <img src="https://github.com/Figrac0/Docker-Kubernetes-Complete/blob/Cross-Container-Communication/assets/DOCKER.png" width="600"/> |
+
+
+| 2 |
+| :---: |
+| <img src="https://github.com/Figrac0/Docker-Kubernetes-Complete/blob/Cross-Container-Communication/assets/networks.png" width="600"/> |
+
+</div>
+
 ## Research Focus
 
 The application consists of two runtime components:
