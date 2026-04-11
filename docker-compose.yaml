@@ -1,0 +1,46 @@
+version: "3.8"
+
+services:
+    mongodb:
+        image: "mongo"
+        volumes:
+            - data:/data/db
+        env_file:
+            - ./env/mongo.env
+        # environment:
+        # - MONGO_INITDB_ROOT_USERNAME= figraco
+        # MONGO_INITDB_ROOT_USERNAME: figraco
+        # MONGO_INITDB_ROOT_PASSWORD: secret
+        # network:
+        #   - some-network
+        container_name: mongodb
+    backend:
+        build: ./backend
+        # build:
+        #     context: ./backend
+        #     dockerfile: Dockerfile
+        ports:
+            - "80:80"
+        volumes:
+            - logs:/app/logs
+            - ./backend:/app
+            - /app/node_modules
+        # environment:
+        #     - MONGODB_USERNAME=figraco
+        #     - MONGODB_PASSWORD=secret
+        env_file:
+            - ./env/backend.env
+        depends_on:
+            - mongodb
+    frontend:
+        build: ./frontend
+        ports:
+            - "3000:3000"
+        volumes:
+            - ./frontend/src:/app/src
+        stdin_open: true
+        tty: true
+
+volumes:
+    data:
+    logs:
