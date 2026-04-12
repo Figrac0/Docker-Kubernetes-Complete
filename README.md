@@ -4,6 +4,12 @@ This repository is a Docker-focused development environment for a Laravel-style 
 
 The project is designed as infrastructure-first Docker practice. The main subject is not application business logic, but the container architecture itself.
 
+<p align="center">
+  <img src="https://github.com/Figrac0/Docker-Kubernetes-Complete/blob/Larvel%26PHP_Dockerized/app.png" width="900"/>
+</p>
+
+
+
 ## What This Project Contains
 
 The stack is defined in [`docker-compose.yaml`](docker-compose.yaml) and includes:
